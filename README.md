@@ -147,6 +147,36 @@ mcp_tutorial/
 }
 ```
 
+## OpenCode MCP 연동
+
+OpenCode에서 이 서버를 MCP tool로 사용하려면:
+
+### 1. OpenCode MCP 설정 열기
+
+```bash
+# OpenCode에서 Ctrl+, 또는 Settings → MCP Servers
+```
+
+### 2. 서버 추가
+
+```json
+{
+  "mcpServers": {
+    "mcp-tutorial": {
+      "command": "node",
+      "args": ["/path/to/mcp_tutorial/server.js"]
+    }
+  }
+}
+```
+
+### 3. 사용
+
+OpenCode에서 `/mcp` 커맨드로 `add` tool 호출 가능:
+```
+Use the add tool with arguments: a=5, b=3
+```
+
 ## 참고
 
 - [MCP Spec](https://spec.modelcontextprotocol.io)
