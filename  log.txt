@@ -30,3 +30,14 @@ Type "help", "copyright", "credits" or "license" for more information.
 │      node /Users/martin/dev/mcp_tutorial/server.js
 │
 └  1 server(s)
+
+
+-------------
+
+
+mcp add를 사용해서 1 더하기 999 는?
+Thinking: The user wants me to use the MCP add function to calculate 1 + 999.
+⚙ mcp_add_add [a=1, b=999]
+Thinking: The user wants me to use MCP add tool to calculate 1 + 999. The result is 1000.
+1000
+▣  Build · MiniMax M2.5 Free · 4.2s
