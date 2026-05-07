@@ -1,0 +1,32 @@
+➜  mcp_tutorial git:(main) ✗ echo '{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0"}}}' | node server.js
+[DEBUG] Server starting with stdio transport...
+[DEBUG] Server connected!
+{"result":{"protocolVersion":"2024-11-05","capabilities":{"tools":{"listChanged":true}},"serverInfo":{"name":"simple-mcp-server","version":"1.0.0"}},"jsonrpc":"2.0","id":0}
+➜  mcp_tutorial git:(main) ✗ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' | node server.js
+
+[DEBUG] Server starting with stdio transport...
+[DEBUG] Server connected!
+{"result":{"tools":[{"name":"add","description":"Add two numbers together","inputSchema":{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"a":{"type":"number"},"b":{"type":"number"}},"required":["a","b"]},"execution":{"taskSupport":"forbidden"}}]},"jsonrpc":"2.0","id":1}
+➜  mcp_tutorial git:(main) ✗ echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"add","arguments":{"a":5,"b":3}}}' | node server.js
+[DEBUG] Server starting with stdio transport...
+[DEBUG] Server connected!
+[DEBUG] add called with a=5, b=3
+{"result":{"content":[{"type":"text","text":"8"}]},"jsonrpc":"2.0","id":2}
+➜  mcp_tutorial git:(main) ✗ python "print(1)"               
+/Users/martin/.asdf/installs/python/3.10.15/bin/python: can't open file '/Users/martin/dev/mcp_tutorial/print(1)': [Errno 2] No such file or directory
+➜  mcp_tutorial git:(main) ✗ python           
+Python 3.10.15 (main, Mar 21 2025, 11:43:48) [Clang 16.0.0 (clang-1600.0.26.6)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print (5+3)
+8
+
+
+
+➜  mcp_tutorial git:(main) opencode mcp list                            
+
+┌  MCP Servers
+│
+●  ✓ mcp_add connected
+│      node /Users/martin/dev/mcp_tutorial/server.js
+│
+└  1 server(s)
